@@ -40,7 +40,7 @@ create the provider if you want to add a initial state or make a actions
 import { ReactNode } from "react";
 import { StateProvider, CreateDispatchType, setConfig } from "zustate-add";
 
-// debug = true log all the state dispatch
+// debug = true log all the state when change
 setConfig({ debug: false });
 
 const globalState = {

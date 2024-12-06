@@ -83,6 +83,11 @@ export const useDispatch = create<GlobalState>((set, get) => ({
       currentState[key] = newState[key]; // Mutate directly
       get().tempState = { ...get().tempState, [key]: newState[key] };
     });
+
+    if (config?.debug) {
+      console.log("🚀 ~ config:", config);
+      console.log("🚀 ~ state:", get().state);
+    }
   },
 
   dispatch: (
@@ -140,6 +145,11 @@ export const useDispatch = create<GlobalState>((set, get) => ({
         state: { ...state.state, [payload]: userGlobalState[payload] },
       }));
     }
+
+    if (config?.debug) {
+      console.log("🚀 ~ config:", config);
+      console.log("🚀 ~ state:", get().state);
+    }
   },
 
   dirty: (payload: string | string[]) => {
@@ -150,6 +160,11 @@ export const useDispatch = create<GlobalState>((set, get) => ({
         payload.forEach((k) => delete newState[k]);
       } else {
         delete newState[payload];
+      }
+
+      if (config?.debug) {
+        console.log("🚀 ~ config:", config);
+        console.log("🚀 ~ state:", get().state);
       }
 
       return { state: newState };
@@ -175,5 +190,10 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     set(() => ({
       actions: {},
     }));
+
+    if (config?.debug) {
+      console.log("🚀 ~ config:", config);
+      console.log("🚀 ~ state:", get().state);
+    }
   },
 }));
