@@ -10,7 +10,7 @@
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "types": ["react"],
+    "types": ["react", "node"],
     "resolveJsonModule": true
   },
   "include": ["src"]

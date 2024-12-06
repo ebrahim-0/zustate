@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import { getZustateConfig } from "./getZustateConfig";
+// const config = getZustateConfig();
 
 let userGlobalState: Record<string, any> = {};
 let userCreateDispatch:
@@ -45,7 +47,7 @@ interface GlobalState {
 
 const initialTempState = {};
 
-export const initializeGlobalState = (
+export const initializeState = (
   globalState?: Record<string, any>,
   createDispatch?: CreateDispatchType
 ) => {
@@ -121,7 +123,9 @@ export const useDispatch = create<GlobalState>((set, get) => ({
       }));
     }
 
+    // if (config.debug) {
     console.log("state", state);
+    // }
   },
 
   reset: (payload: string | string[]) => {

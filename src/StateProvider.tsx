@@ -1,7 +1,7 @@
 "use client"
 
 import React, { ReactNode, useEffect } from "react";
-import { initializeGlobalState, CreateDispatchType } from "./index";
+import { initializeState, CreateDispatchType } from "./index";
 
 interface StateProviderProps {
   globalState?: Record<string, any>;
@@ -15,7 +15,7 @@ export const StateProvider: React.FC<StateProviderProps> = ({
   children,
 }) => {
   useEffect(() => {
-    initializeGlobalState(globalState, createDispatch);
+    initializeState(globalState, createDispatch);
   }, [globalState, createDispatch]);
 
   return <>{children}</>;

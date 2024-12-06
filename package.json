@@ -1,5 +1,5 @@
 {
-  "name": "@zustate/plus",
+  "name": "zustate-plus",
   "version": "1.0.0",
   "description": "A lightweight global state management library for React built on Zustand.",
   "main": "dist/index.js",
@@ -7,6 +7,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ebrahim-0/zustate-plus.git"
   },
   "keywords": [
     "zustand",
@@ -25,6 +29,7 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   }
 }
