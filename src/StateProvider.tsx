@@ -16,7 +16,7 @@ export const StateProvider: React.FC<StateProviderProps> = ({
 }) => {
   useEffect(() => {
     initializeState(globalState, createDispatch);
-  }, [globalState, createDispatch]);
+  }, []);
 
   return <>{children}</>;
 };

@@ -187,9 +187,5 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     set(() => ({
       actions: {},
     }));
-
-    if (config?.debug) {
-      console.log("🚀 ~ state:", get().state);
-    }
   },
 }));
