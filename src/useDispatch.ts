@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { getZustateConfig } from "./getZustateConfig";
+import { config } from "./setZustateConfig";
 
 let userGlobalState: Record<string, any> = {};
 let userCreateDispatch:
@@ -121,10 +121,9 @@ export const useDispatch = create<GlobalState>((set, get) => ({
         },
       }));
     }
-    const config = getZustateConfig();
 
-    console.log("🚀 ~ useDispatch ~ config:", config);
-    if (config.debug) {
+    if (config?.debug) {
+      console.log("🚀 ~ config:", config);
       console.log("🚀 ~ state:", state);
     }
   },

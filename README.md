@@ -1,4 +1,4 @@
-# **zustate-plus (\***Global State Manager**\*\)**
+# **zustate-add (\***Global State Manager**\*\)**
 
 A lightweight, flexible global state management library for React applications, built on top of Zustand. This library provides an intuitive API for managing global state, dispatching actions, and keeping your application state organized.
 
@@ -19,9 +19,9 @@ A lightweight, flexible global state management library for React applications, 
 Install the package via NPM or Yarn:
 
 ```bash
-npm install zustate-plus
+npm install zustate-add
 # or
-yarn add zustate-plus
+yarn add zustate-add
 ```
 
 ---
@@ -38,7 +38,10 @@ create the provider if you want to add a initial state or make a actions
 "use client"; // don’t forget to add use clint if you are in a next.js
 
 import { ReactNode } from "react";
-import { StateProvider, CreateDispatchType } from "zustate-plus";
+import { StateProvider, CreateDispatchType, setConfig } from "zustate-add";
+
+// debug = true log all the state dispatch
+setConfig({ debug: false });
 
 const globalState = {
   name: "Ibrahim",
@@ -96,7 +99,7 @@ Then import the hooks and start managing your global state:
 
 ```tsx
 import React from "react";
-import { useDispatch, useSelector } from "zustate-plus";
+import { useDispatch, useSelector } from "zustate-add";
 
 const App = () => {
   const { dispatch, dispatcher } = useDispatch();
@@ -137,7 +140,7 @@ export default App;
 Provides access to dispatch and state-management methods.
 
 ```typescript
-import { useDispatch } from "zustate-plus";
+import { useDispatch } from "zustate-add";
 
 const { dispatch, dispatcher, reset, dirty, addState } = useDispatch();
 ```
@@ -155,7 +158,7 @@ const { dispatch, dispatcher, reset, dirty, addState } = useDispatch();
 Access specific parts of the global state.
 
 ```typescript
-import { useSelector } from "zustate-plus";
+import { useSelector } from "zustate-add";
 
 const value = useSelector("key", "defaultValue");
 ```
@@ -189,7 +192,7 @@ export const globalState = {
 Define actions in `createDispatch`:
 
 ```typescript
-import { CreateDispatchType } from "zustate-plus";
+import { CreateDispatchType } from "zustate-add";
 
 const createDispatch: CreateDispatchType = (data, tools, actions) => {
   const { type, payload } = data;
@@ -220,7 +223,7 @@ const createDispatch: CreateDispatchType = (data, tools, actions) => {
 Define provider in root app `StateProvider`:
 
 ```tsx
-import { StateProvider } from "zustate-plus";
+import { StateProvider } from "zustate-add";
 
 <StateProvider globalState={globalState} createDispatch={createDispatch}>
   {children}
@@ -230,7 +233,7 @@ import { StateProvider } from "zustate-plus";
 Dispatch actions using `dispatcher`:
 
 ```typescript
-import { useDispatch } from "zustate-plus";
+import { useDispatch } from "zustate-add";
 const { dispatcher } = useDispatch();
 dispatcher("setAge", { value: 28 });
 ```
@@ -238,7 +241,7 @@ dispatcher("setAge", { value: 28 });
 Reset the value to the initial value in global state `reset`:
 
 ```typescript
-import { useDispatch } from "zustate-plus";
+import { useDispatch } from "zustate-add";
 const { reset } = useDispatch();
 reset("key");
 // or
@@ -248,7 +251,7 @@ reset(["key1", "key2"]);
 Dirty the value in the state remove the a value in the state `dirty`:
 
 ```typescript
-import { useDispatch } from "zustate-plus";
+import { useDispatch } from "zustate-add";
 const { dirty } = useDispatch();
 dirty("key");
 // or

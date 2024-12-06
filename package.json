@@ -1,6 +1,6 @@
 {
   "name": "zustate-add",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "description": "A lightweight global state management library for React built on Zustand.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -26,9 +26,12 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
+    "find-up": "^7.0.0",
+    "fs-extra": "^11.2.0",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   }
