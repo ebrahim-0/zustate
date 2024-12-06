@@ -57,6 +57,7 @@ export const initializeState = (
     state: { ...globalState },
     createDispatcher: createDispatch,
   });
+  console.log("🚀 ~ config:", config);
 };
 
 export const useDispatch = create<GlobalState>((set, get) => ({
@@ -85,7 +86,6 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     });
 
     if (config?.debug) {
-      console.log("🚀 ~ config:", config);
       console.log("🚀 ~ state:", get().state);
     }
   },
@@ -128,7 +128,6 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     }
 
     if (config?.debug) {
-      console.log("🚀 ~ config:", config);
       console.log("🚀 ~ state:", state);
     }
   },
@@ -147,7 +146,6 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     }
 
     if (config?.debug) {
-      console.log("🚀 ~ config:", config);
       console.log("🚀 ~ state:", get().state);
     }
   },
@@ -163,7 +161,6 @@ export const useDispatch = create<GlobalState>((set, get) => ({
       }
 
       if (config?.debug) {
-        console.log("🚀 ~ config:", config);
         console.log("🚀 ~ state:", get().state);
       }
 
@@ -192,7 +189,6 @@ export const useDispatch = create<GlobalState>((set, get) => ({
     }));
 
     if (config?.debug) {
-      console.log("🚀 ~ config:", config);
       console.log("🚀 ~ state:", get().state);
     }
   },
