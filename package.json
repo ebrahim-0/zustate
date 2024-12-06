@@ -1,0 +1,30 @@
+{
+  "name": "@zustate/plus",
+  "version": "1.0.0",
+  "description": "A lightweight global state management library for React built on Zustand.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "zustand",
+    "global state",
+    "state management",
+    "react",
+    "next"
+  ],
+  "author": "Ibrahim Abdelrazik <ebrahimabdelrazik2002@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
